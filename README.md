@@ -58,6 +58,34 @@ A aplicação está organizada em três microsserviços, cada um com responsabil
 
 4. **Documentação Swagger**: Utilize a interface Swagger para testar os endpoints disponíveis, acessando o endereço de cada API.
 
+## Rotas da API
+
+### 1. Products
+
+| Método | Rota                  | Descrição                             |
+|--------|-----------------------|---------------------------------------|
+| GET    | `/api/v1/Product`       | Obtém todos os produtos|               
+| GET    | `/api/v1/Product{id}`  | Obtém um produto por ID|             
+| GET    | `/api/v1/Product/GetProductByCategory{id}`  | Obtém produtos pela categoria|
+| POST   | `/api/v1/Product`       | Cria um novo produto|
+| PUT    | `/api/v1/Product`       | Atualiza um produto existente|
+| DELETE | `/api/v1/Product{id}`  | Remove um produto por ID|
+
+### 2. Basket
+|Método	|Rota	                  | Descrição                             |
+|--------|-----------------------|---------------------------------------|
+|GET	   |`/api/v1/Basket/{userName}`	|Obtém o carrinho de compras de um usuário pelo nome de usuário.|
+|POST	   |`/api/v1/Basket`	|Atualiza o carrinho de compras com os dados fornecidos. Inclui cálculo de descontos.|
+|DELETE	|`/api/v1/Basket/{userName}`	|Remove o carrinho de compras de um usuário pelo nome de usuário.|
+
+### 3. Discount
+|Método	|Rota	| Descrição|
+|--------|-----------------------|---------------------------------------|
+|GET	   |`/api/v1/Discount/{productName}`	|Obtém o desconto associado a um produto pelo nome do produto.|
+|POST	   |`/api/v1/Discount`	|Cria um novo desconto para um produto.|
+|PUT	   |`/api/v1/Discount`	|Atualiza os dados de um desconto existente.|
+|DELETE	|`/api/v1/Discount/{productName}`	|Remove o desconto associado a um produto pelo nome do produto.|
+
 ## Conclusão
 
 Este projeto exemplifica como uma arquitetura baseada em microsserviços pode ser eficiente, modular e escalável ao utilizar tecnologias modernas como Docker, Redis, MongoDB, PostgreSQL e gRPC. A separação de responsabilidades entre os serviços permite fácil manutenção e implementação de novas funcionalidades, enquanto o uso de containers garante uma implantação ágil e consistente. É uma solução ideal para sistemas distribuídos que demandam alta performance e integração eficiente.
